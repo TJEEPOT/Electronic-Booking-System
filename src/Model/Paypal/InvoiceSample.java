@@ -17,8 +17,8 @@ import com.paypal.base.rest.PayPalRESTException;
  */
 public class InvoiceSample extends SampleBase<Invoice> {
 
-    public static final String clientID = "AbNmjUQqM4G2m4ezd5RulAxq0_VLaR-Ei1MWA38W0fG6s-qQVbBi-tycQrD6FrJZ3XhZ62nW6CmC5QrV";
-    public static final String clientSecret = "ELbN5kAgmwuEc28HSdLZe1dh5vfuRb_PzM7SywDmg0tA3Jz-r97biCuXYS9YWkk9RTXI4EqGSz1-MDct";
+    public static final String clientID = "xxxx"; //removed test accounts
+    public static final String clientSecret = "xxxx";
 
     /**
      * Initialize and instantiate an Invoice object
