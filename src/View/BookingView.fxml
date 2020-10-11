@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<SplitPane dividerPositions="0.17817371937639198" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Presenter.BookingViewPresenter">
+    <items>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+            <children>
+                <VBox layoutX="7.0" layoutY="8.0" prefHeight="171.0" prefWidth="144.0" spacing="4.0">
+                    <children>
+                        <Button fx:id="dashboard" mnemonicParsing="false" onAction="#dashboardButton" prefHeight="29.0" prefWidth="143.0" text="Dashboard">
+                            <font>
+                                <Font name="System Bold" size="16.0" />
+                            </font></Button>
+                        <Button fx:id="events" mnemonicParsing="false" onAction="#eventListButton" prefHeight="29.0" prefWidth="143.0" text="Events">
+                            <font>
+                                <Font name="System Bold" size="16.0" />
+                            </font></Button>
+                        <Button fx:id="customers" mnemonicParsing="false" onAction="#customerListButton" prefHeight="29.0" prefWidth="143.0" text="Customers">
+                            <font>
+                                <Font name="System Bold" size="16.0" />
+                            </font></Button>
+                        <Button fx:id="reports" mnemonicParsing="false" onAction="#reportsButton" prefHeight="29.0" prefWidth="143.0" text="Reports">
+                            <font>
+                                <Font name="System Bold" size="16.0" />
+                            </font></Button>
+                        <Button fx:id="logout" mnemonicParsing="false" onAction="#logoutButton" prefHeight="354.0" prefWidth="143.0" style="-fx-background-color: Crimson;" text="Logout">
+                            <font>
+                                <Font name="System Bold" size="16.0" />
+                            </font></Button>
+                    </children>
+                </VBox>
+            </children></AnchorPane>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" style="-fx-background-color: lightblue;">
+            <children>
+                <TableView fx:id="customerTable" layoutX="27.0" layoutY="10.0" prefHeight="320.0" prefWidth="682.0">
+                    <columns>
+                        <TableColumn fx:id="customerNameColumn" prefWidth="681.0" text="Select Customer" />
+                    </columns>
+                </TableView>
+                <TableView fx:id="ticketTypeTableView" editable="true" layoutX="27.0" layoutY="435.0" prefHeight="180.0" prefWidth="332.0">
+                    <columns>
+                        <TableColumn fx:id="ticketNameColumn" editable="false" minWidth="0.0" prefWidth="157.0" text="Ticket Type" />
+                        <TableColumn fx:id="remainingTicketsColumn" editable="false" minWidth="0.0" prefWidth="87.0" text="Remaining" />
+                        <TableColumn fx:id="ticketQuantityColumn" onEditCommit="#changeTicketTypeQuantityCellEvent" prefWidth="87.0" text="Quantity" />
+                    </columns>
+                </TableView>
+                <TableView fx:id="sundries" editable="true" layoutX="377.0" layoutY="435.0" prefHeight="180.0" prefWidth="332.0">
+                    <columns>
+                        <TableColumn fx:id="sundryNameColumn" editable="false" minWidth="0.0" prefWidth="157.0" text="Sundry " />
+                        <TableColumn fx:id="remainingSundriesColumn" editable="false" minWidth="0.0" prefWidth="87.0" text="Remaining" />
+                        <TableColumn fx:id="sundryQuantityColumn" onEditCommit="#changeSundryQuantityCellEvent" prefWidth="87.0" text="Quantity" />
+                    </columns>
+                </TableView>
+                <HBox layoutX="27.0" layoutY="327.0" prefHeight="42.0" prefWidth="682.0" spacing="5.0">
+                    <children>
+                        <TextField fx:id="customerNameTextField" prefHeight="25.0" prefWidth="183.0" promptText="Username">
+                     <font>
+                        <Font size="16.0" />
+                     </font></TextField>
+                        <TextField fx:id="customerPasswordTextField" prefWidth="183.0" promptText="Secret Word">
+                     <font>
+                        <Font size="16.0" />
+                     </font></TextField>
+                        <TextField fx:id="customerAddressTextField" prefWidth="183.0" promptText="Address">
+                     <font>
+                        <Font size="16.0" />
+                     </font></TextField>
+                        <Button fx:id="addNewCustomerButton" mnemonicParsing="false" onAction="#addNewCustomerButtonPressed" prefHeight="37.0" prefWidth="182.0" text="Add new Customer">
+                            <font>
+                                <Font name="System Font" size="16.0" />
+                            </font></Button>
+                    </children>
+                    <padding>
+                        <Insets top="5.0" />
+                    </padding>
+                </HBox>
+                <Button fx:id="saveBookingButton" layoutX="574.0" layoutY="656.0" mnemonicParsing="false" onAction="#SaveBookingButtonPressed" prefHeight="37.0" prefWidth="136.0" style="-fx-background-color: #4cb94c;" text="Save Booking">
+                    <font>
+                        <Font name="System Bold" size="16.0" />
+                    </font></Button>
+                <CheckBox fx:id="paymentStatusCheckBox" layoutX="571.0" layoutY="621.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="157.0" text="Customer paid?">
+               <font>
+                  <Font size="16.0" />
+               </font></CheckBox>
+                <Label fx:id="successMessage" layoutX="26.0" layoutY="656.0" prefHeight="37.0" prefWidth="392.0" textFill="#328632" wrapText="true">
+               <font>
+                  <Font size="18.0" />
+               </font></Label>
+                <Label layoutX="551.0" layoutY="417.0" opacity="0.0" text="Customer added successfully!" />
+                <HBox layoutX="27.0" layoutY="628.0" prefHeight="29.0" prefWidth="348.0">
+                    <children>
+                        <Label text="Total Booking Value: ">
+                     <font>
+                        <Font size="16.0" />
+                     </font></Label>
+                        <Label fx:id="totalBookingValue">
+                     <font>
+                        <Font size="16.0" />
+                     </font></Label>
+                    </children>
+                </HBox>
+            <HBox layoutX="26.0" layoutY="376.0" prefHeight="31.0" prefWidth="682.0">
+               <children>
+                  <Label prefHeight="25.0" prefWidth="212.0" text="Verify Customer Secret Word">
+                      <tooltip><Tooltip text="A word used to verify the identity of the customer." /></tooltip>
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="secretWord" prefHeight="31.0" prefWidth="237.0">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </TextField>
+                  <Button fx:id="verifyButton" mnemonicParsing="false" onAction="#verifySecretWord" prefHeight="0.0" prefWidth="63.0" text="Verify">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="7.0" right="7.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+                <Button fx:id="resendReceiptButton" layoutX="421.0" layoutY="656.0" mnemonicParsing="false" onAction="#resendReceiptButtonPushed" prefHeight="37.0" prefWidth="136.0" text="Resend receipt">
+                    <font>
+                        <Font size="16.0" />
+                    </font></Button>
+            <Label fx:id="verifyStatus" layoutX="29.0" layoutY="407.0" minWidth="100.0" prefHeight="25.0" prefWidth="316.0">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            </children></AnchorPane>
+    </items>
+</SplitPane>

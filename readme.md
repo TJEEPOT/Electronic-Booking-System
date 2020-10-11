@@ -1,0 +1,12 @@
+# What It Does #
+This was a large project created in several parts to demonstrate my ability to go from a basic idea to a fully completed project. The original git repo for this project is located [here](https://bitbucket.org/modnar1/ebs-project/src/master/).
+
+This program uses a UI designed with JavaFX to allow event planners to schedule events for their clients. It allows an authorised user to add, remove and modify events, locations and customers and uses a backend sqlite database to hold the necessary information. For demonstration purposes, this database can be found included in this repository, however this must be reworked if this software goes into production.
+
+# What I Learned #
+My part on the realisation of this project largely revolved around setting up the database and interfacing it with the rest of the project, but I was also involved with forming the initial project idea, Object Oriented Design and documenting additional areas for the group reports such as feature matrix and diagrams, as well as general bug fixing.
+
+This project required me to research existing systems and form a feature matrix for comparison. I had to understand **OOD** in order to create the **Class** and **MVP diagrams**, I also created an **Entity-Relationship diagram** to help with designing the database. For the program itself, I learned how to use **JDBC** to interface with the **SQLite Database**, built the DatabaseManager class and refined the UI to ensure it was consistent by using **SceneBuilder** with **JavaFX**. Later in the production of the program, I taught myself some security basics and rebuilt our login system to ensure we stored and retrieved user passwords from the database in a safe way, utilising the **PBKDF2 Hashing Algorithm** to generate a **password salt** which could be stored in the database.
+
+# Usage Notes #
+Compile the contents of \src. You will need to include the libraries listed in \lib as well as the jars found in Database, Email and Paypal folders. To access and use the program, you need to be running the SQLite database 'EBSDatabase' locally, which is located in \src\Model\Database\\. The full system can be demoed with the username 'adam@ebss.com' and the password '123'. The restricted-access version of the software can be demoed with the user 'bob@ebss.com' and the password '123'. See the documentation for more details and a breakdown on the project itself.

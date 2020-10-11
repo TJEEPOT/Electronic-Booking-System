@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<SplitPane dividerPositions="0.17817371937639198" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Presenter.EventListPresenter">
+    <items>
+        <AnchorPane maxWidth="160.0" minHeight="160.0" minWidth="160.0" prefHeight="160.0" prefWidth="100.0">
+            <children>
+                <VBox layoutX="7.0" layoutY="8.0" prefHeight="171.0" prefWidth="144.0" spacing="4.0">
+                    <children>
+                        <Button fx:id="dashboard" mnemonicParsing="false" onAction="#dashboardButton" prefHeight="29.0" prefWidth="143.0" text="Dashboard">
+                            <font>
+                                <Font name="System Bold" size="16.0" />
+                            </font></Button>
+                        <Button mnemonicParsing="false" prefHeight="29.0" prefWidth="143.0" text="Events">
+                            <font>
+                                <Font name="System Bold" size="16.0" />
+                            </font></Button>
+                        <Button fx:id="customers" mnemonicParsing="false" onAction="#customerListButton" prefHeight="29.0" prefWidth="143.0" text="Customers">
+                            <font>
+                                <Font name="System Bold" size="16.0" />
+                            </font></Button>
+                        <Button fx:id="reports" mnemonicParsing="false" onAction="#reportsButton" prefHeight="29.0" prefWidth="143.0" text="Reports">
+                            <font>
+                                <Font name="System Bold" size="16.0" />
+                            </font></Button>
+                        <Button fx:id="logout" mnemonicParsing="false" onAction="#logoutButton" prefHeight="29.0" prefWidth="143.0" style="-fx-background-color: Crimson;" text="Logout">
+                            <font>
+                                <Font name="System Bold" size="16.0" />
+                            </font></Button>
+                    </children>
+                </VBox>
+            </children></AnchorPane>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" style="-fx-background-color: lightblue;">
+            <children>
+                <TableView fx:id="table" layoutX="14.0" layoutY="8.0" prefHeight="625.0" prefWidth="704.0">
+                    <columns>
+                        <TableColumn fx:id="eventNameColumn" prefWidth="205.99998474121094" text="Event Name" />
+                        <TableColumn fx:id="eventVenueColumn" prefWidth="211.0" text="Venue" />
+                        <TableColumn fx:id="startTimeColumn" minWidth="0.0" prefWidth="163.0" text="Start Time" />
+                        <TableColumn fx:id="ticketsRemainingColumn" prefWidth="120.0" text="Tickets Remaining" />
+                    </columns>
+                </TableView>
+                <Button fx:id="createNewEvent" layoutX="561.0" layoutY="645.0" mnemonicParsing="false" onAction="#createNewEvent" prefHeight="44.0" style="-fx-background-color: #4cb94c;" text="Create new Event">
+                    <font>
+                        <Font name="System Bold" size="16.0" />
+                    </font></Button>
+                <Button fx:id="deleteSelectedEventButton" layoutX="357.0" layoutY="646.0" minHeight="44.0" mnemonicParsing="false" onAction="#deleteSelectedEventButtonPressed" style="-fx-background-color: crimson;" text="Delete Selected Event">
+                    <font>
+                        <Font name="System Bold" size="16.0" />
+                    </font></Button>
+                <Label fx:id="deletionMessage" layoutX="14.0" layoutY="648.0" opacity="0.0" prefHeight="44.0" prefWidth="335.0" text="Event deleted succesfully!" textFill="#368041">
+               <font>
+                  <Font size="16.0" />
+               </font></Label>
+            </children></AnchorPane>
+    </items>
+</SplitPane>

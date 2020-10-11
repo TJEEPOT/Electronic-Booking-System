@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<SplitPane dividerPositions="0.18" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Presenter.ReportsPresenter">
+    <items>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+            <children>
+                <VBox layoutX="7.0" layoutY="8.0" prefHeight="171.0" prefWidth="144.0" spacing="4.0">
+                    <children>
+                        <Button fx:id="dashboard" mnemonicParsing="false" onAction="#dashboardButton" prefHeight="29.0" prefWidth="143.0" text="Dashboard">
+                            <font>
+                                <Font name="System Bold" size="16.0" />
+                            </font></Button>
+                        <Button fx:id="events" mnemonicParsing="false" onAction="#eventListButton" prefHeight="29.0" prefWidth="143.0" text="Events">
+                            <font>
+                                <Font name="System Bold" size="16.0" />
+                            </font></Button>
+                        <Button fx:id="customers" mnemonicParsing="false" onAction="#customerListButton" prefHeight="29.0" prefWidth="143.0" text="Customers">
+                            <font>
+                                <Font name="System Bold" size="16.0" />
+                            </font></Button>
+                        <Button fx:id="reports" mnemonicParsing="false" onAction="#reportsButton" prefHeight="29.0" prefWidth="143.0" text="Reports">
+                            <font>
+                                <Font name="System Bold" size="16.0" />
+                            </font></Button>
+                        <Button fx:id="logout" mnemonicParsing="false" onAction="#logoutButton" prefHeight="29.0" prefWidth="143.0" style="-fx-background-color: Crimson;" text="Logout">
+                            <font>
+                                <Font name="System Bold" size="16.0" />
+                            </font></Button>
+                    </children>
+                </VBox>
+            </children></AnchorPane>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" style="-fx-background-color: lightblue;">
+            <children>
+            <VBox layoutX="14.0" layoutY="14.0" prefHeight="678.0" prefWidth="704.0">
+               <children>
+                  <Label text="Reports">
+                     <font>
+                        <Font name="System Bold" size="28.0" />
+                     </font>
+                     <padding>
+                        <Insets left="10.0" top="10.0" />
+                     </padding>
+                  </Label>
+                  <HBox>
+                     <children>
+                        <Label text="Total Sales:">
+                           <padding>
+                              <Insets left="10.0" top="50.0" />
+                           </padding>
+                           <font>
+                              <Font size="22.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="totalProfit" text="x">
+                           <font>
+                              <Font size="22.0" />
+                           </font>
+                           <padding>
+                              <Insets left="5.0" top="50.0" />
+                           </padding>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <PieChart fx:id="pieChart1" prefHeight="553.0" prefWidth="704.0" title="Sales Breakdown per Event" />
+               </children></VBox>
+            </children>
+        </AnchorPane>
+    </items>
+</SplitPane>

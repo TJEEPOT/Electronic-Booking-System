@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<SplitPane dividerPositions="0.17817371937639198" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Presenter.DashboardViewPresenter">
+    <items>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+            <children>
+                <VBox layoutX="7.0" layoutY="8.0" prefHeight="171.0" prefWidth="144.0" spacing="4.0">
+                    <children>
+                        <Button fx:id="dashboard" mnemonicParsing="false" onAction="#dashboardButton" prefHeight="29.0" prefWidth="143.0" text="Dashboard">
+                            <font>
+                                <Font name="System Bold" size="16.0" />
+                            </font></Button>
+                        <Button fx:id="events" mnemonicParsing="false" onAction="#eventListButton" prefHeight="29.0" prefWidth="143.0" text="Events">
+                            <font>
+                                <Font name="System Bold" size="16.0" />
+                            </font></Button>
+                        <Button fx:id="customers" mnemonicParsing="false" onAction="#customerListButton" prefHeight="29.0" prefWidth="143.0" text="Customers">
+                            <font>
+                                <Font name="System Bold" size="16.0" />
+                            </font></Button>
+                        <Button fx:id="reports" mnemonicParsing="false" onAction="#reportsButton" prefHeight="29.0" prefWidth="143.0" text="Reports">
+                            <font>
+                                <Font name="System Bold" size="16.0" />
+                            </font></Button>
+                        <Button fx:id="logout" mnemonicParsing="false" onAction="#logoutButton" prefHeight="29.0" prefWidth="143.0" style="-fx-background-color: Crimson;" text="Logout">
+                            <font>
+                                <Font name="System Bold" size="16.0" />
+                            </font></Button>
+                    </children>
+                </VBox>
+            </children></AnchorPane>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" style="-fx-background-color: lightblue;">
+            <children>
+                <Label layoutX="14.0" layoutY="14.0" prefHeight="37.0" prefWidth="198.0" text="Welcome back!" textFill="#201c1c">
+                    <font>
+                        <Font name="System Bold" size="24.0" />
+                    </font></Label>
+                <Pane layoutX="34.0" layoutY="45.0" prefHeight="242.0" prefWidth="675.0">
+                    <children>
+                        <HBox prefHeight="242.0" prefWidth="675.0" spacing="15.0">
+                            <children>
+                                <VBox prefHeight="242.0" prefWidth="266.0">
+                                    <children>
+                                        <GridPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="240.0" prefWidth="677.0">
+                                            <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="366.0" minWidth="10.0" prefWidth="167.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="454.0" minWidth="10.0" prefWidth="400.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="163.0" minWidth="10.0" prefWidth="110.0" />
+                                            </columnConstraints>
+                                            <rowConstraints>
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                            </rowConstraints>
+                                            <children>
+                                                <Label fx:id="eventNameLabel" text="EventName" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font></Label>
+                                                <Label fx:id="eventLocationLabel" text="EventLocation" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font></Label>
+                                                <Label fx:id="eventDescriptionLabel" text="EventDescription" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font></Label>
+                                                <Label fx:id="eventStartTimeLabel" text="EventStartTime" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font></Label>
+                                                <Label fx:id="eventEndTimeLabel" text="EventEndTime" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font></Label>
+                                                <Label text="Upcoming Event:">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font></Label>
+                                                <Label fx:id="eventTicketsRemainingLabel" text="EventTicketsRemaining" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font></Label>
+                                                <Label fx:id="eventCoordinatorLabel" text="EventCoordinator" GridPane.columnIndex="1" GridPane.rowIndex="7">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font></Label>
+                                                <Label fx:id="eventStartDateLabel" text="EventStartDate" GridPane.columnIndex="1">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font></Label>
+                                                <Label text="Event Name" GridPane.rowIndex="1">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font></Label>
+                                                <Label text="Location" GridPane.rowIndex="2">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font></Label>
+                                                <Label text="Description" GridPane.rowIndex="3">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font></Label>
+                                                <Label text="Start Time" GridPane.rowIndex="4">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font></Label>
+                                                <Label text="End Time" GridPane.rowIndex="5">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font></Label>
+                                                <Label prefHeight="30.0" prefWidth="262.0" text="Remaining Tickets" GridPane.rowIndex="6">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font></Label>
+                                                <Label text="Event Coordinator" GridPane.rowIndex="7">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font></Label>
+                                                <Label text="Total Profits" GridPane.columnIndex="2">
+                                                    <font>
+                                                        <Font size="18.0" />
+                                                    </font>
+                                                </Label>
+                                                <Label fx:id="totalProfit" text="£0.00" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font></Label>
+                                            </children>
+                                        </GridPane>
+                                    </children>
+                           <HBox.margin>
+                              <Insets top="50.0" />
+                           </HBox.margin></VBox>
+                            </children>
+                        </HBox>
+                    </children>
+                </Pane>
+                <PieChart fx:id="pieChart1" layoutX="14.0" layoutY="346.0" prefHeight="341.0" prefWidth="709.0" />
+                        <Button fx:id="makeABookingButton" layoutX="542.0" layoutY="292.0" minHeight="42.0" mnemonicParsing="false" onAction="#makeABookingButtonPressed" prefHeight="42.0" prefWidth="167.0" text="Make a Booking">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Button>
+            </children></AnchorPane>
+    </items>
+</SplitPane>

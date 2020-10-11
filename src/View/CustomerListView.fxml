@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<SplitPane dividerPositions="0.17817371937639198" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Presenter.CustomerListPresenter">
+    <items>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+            <children>
+                <VBox layoutX="7.0" layoutY="8.0" prefHeight="171.0" prefWidth="144.0" spacing="4.0">
+                    <children>
+                        <Button fx:id="dashboard" mnemonicParsing="false" onAction="#dashboardButton" prefHeight="29.0" prefWidth="143.0" text="Dashboard">
+                            <font>
+                                <Font name="System Bold" size="16.0" />
+                            </font></Button>
+                        <Button fx:id="events" mnemonicParsing="false" onAction="#eventListButton" prefHeight="29.0" prefWidth="143.0" text="Events">
+                            <font>
+                                <Font name="System Bold" size="16.0" />
+                            </font></Button>
+                        <Button fx:id="customers" mnemonicParsing="false" onAction="#customerListButton" prefHeight="29.0" prefWidth="143.0" text="Customers">
+                            <font>
+                                <Font name="System Bold" size="16.0" />
+                            </font></Button>
+                        <Button fx:id="reports" mnemonicParsing="false" onAction="#reportsButton" prefHeight="29.0" prefWidth="143.0" text="Reports">
+                            <font>
+                                <Font name="System Bold" size="16.0" />
+                            </font></Button>
+                        <Button fx:id="logout" mnemonicParsing="false" onAction="#logoutButton" prefHeight="29.0" prefWidth="143.0" style="-fx-background-color: Crimson;" text="Logout">
+                            <font>
+                                <Font name="System Bold" size="16.0" />
+                            </font></Button>
+                    </children>
+                </VBox>
+            </children>
+        </AnchorPane>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" style="-fx-background-color: lightblue;">
+            <children>
+                <TableView fx:id="table" layoutX="14.0" layoutY="8.0" prefHeight="618.0" prefWidth="705.0" style="-fx-background-color: lightblue;">
+                    <columns>
+                        <TableColumn fx:id="usernameColumn" prefWidth="182.0" text="Username" />
+                        <TableColumn fx:id="addressColumn" prefWidth="519.0" text="Address" />
+                    </columns>
+                </TableView>
+            <Button fx:id="createNewCustomer" layoutX="508.0" layoutY="636.0" mnemonicParsing="false" onAction="#createNewCustomer" prefHeight="50.0" prefWidth="211.0" style="-fx-background-color: #4cb94c;" text="Create New Customer">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="deleteSelectedCustomer" layoutX="246.0" layoutY="636.0" mnemonicParsing="false" onAction="#deleteSelectedCustomerButtonPressed" prefHeight="50.0" prefWidth="252.0" style="-fx-background-color: Crimson;" text="Delete Selected Customer">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Button>
+            <Label fx:id="deletionMessage" layoutX="14.0" layoutY="653.0" textFill="#579a29">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            </children>
+        </AnchorPane>
+    </items>
+</SplitPane>

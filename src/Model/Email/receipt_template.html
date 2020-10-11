@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    /*body*/
+    body {
+        display: flex;
+        flex-direction: column;
+        min-width: 520px;
+        max-width: 960px;
+        margin: auto; 
+        color: #555555;	
+        text-align: justify; 
+        font-family: helvetica, sans-serif, arial;
+    }
+
+    /*body*/
+
+    /*h1*/
+    h1 {
+        color: maroon;
+        margin-left: 40px;
+    }
+    /*h1*/
+
+    /* tables */
+    table{
+        border: 2px solid #555;
+    }
+
+    td{
+        padding: 3px 8px 3px 8px;
+    }
+    /*tables*/
+
+
+
+    /*footer*/
+    footer {
+        color: #FFFFFF;
+        clear: both;
+        width: 100%;
+        padding: 10px 0px;
+        text-align: center;
+        background-color: #2B5B83;
+    }
+    /*footer*/
+</style>
+</head>
+<body>
+
+    <h1>Thank you for your order!</h1>
+    <p>Please find below your order details.</p>
+
+    <table>
+        <tr>
+            <td>&nbsp;Event:</td>
+            <td>&nbsp;%event%</td>
+        </tr>
+        <tr>
+            <td>&nbsp;Model.Email:</td>
+            <td>&nbsp;%user%</td>
+        </tr>
+        <tr>
+            <td>&nbsp;Value:</td>
+            <td>&nbsp;%bookingValue%</td>
+        </tr>
+    </table>
+
+    <footer>
+        <h3>Contact</h3>
+        <p>1 Fake Street, Norwich NR14 5LS || 01234 567 890 || <u>
+            <a href = "mailto:inquiries@ebs.com?Subject=Website%20Inquiry" 
+               target = "_top">inquiries@ebs.com</a></u></p>
+    </footer>
+
+</body>
+</html>
